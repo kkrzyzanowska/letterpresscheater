@@ -7,7 +7,8 @@
             [environ.core :refer [env]]))
 
 (defn splash []
-  {:status {"Content-Type" "text/plain"}
+  {:status 200
+   :headers {"Content-Type" "text/plain"}
    :body (pr-str ["Hello" :from 'Heroku])})
 
 (defroutes app
