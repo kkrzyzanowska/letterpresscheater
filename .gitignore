@@ -5,6 +5,7 @@
 *.whoosh
 *.db
 env
+venv
 dist
 _mailinglist/*
 *.egg-info
