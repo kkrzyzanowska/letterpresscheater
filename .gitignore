@@ -11,3 +11,10 @@ pom.xml.asc
 .lein-plugins/
 .lein-failures
 .lein-env
+venv
+include
+lib
+.DS_Store
+*.swp
+*~
+*.py[oc]
