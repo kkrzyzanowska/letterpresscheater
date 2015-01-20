@@ -1,8 +1,0 @@
-(require 'letterpresscheater.web)
-(def server (letterpresscheater.web/-main))
-(require 'letterpresscheater.web)
-(def server (letterpresscheater.web/-main))
-(use 'letterpresscheater.web :reload)
-(use 'letterpresscheater.web)
-(use 'letterpresscheater.web :reload)
-(require 'letterpresscheater.web :reload-all)
