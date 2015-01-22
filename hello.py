@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
@@ -17,11 +17,38 @@ def show_results():
     return render_template('show_results.html', solutions=solutions)
 
 
+def canMakeWord(letters, word):
+    """
+    Checks if a word (from a dictionary) can be
+    constructed with given letters
+    """
+    if len(word) > len(letters):
+        return False
+    listOfLetters = list(letters)
+    for index, letter in enumerate(word):
+        if letter in listOfLetters:
+            listOfLetters.remove(letter)
+        else:
+            return False
+    return True
+
+
 def compute_solution(letters):
+    """
+    Computes a list of words that can be
+    constructed with letters
+    """
     solutions = []
-    for letter in letters:
-        solutions.append(letter)
-    return solutions
+    letters = letters.encode('ascii', 'ignore')
+    with open('static/dict.txt', 'r') as f:
+        legalWordsList = f.readlines()
+    for word in legalWordsList:
+        if canMakeWord(letters, word):
+            solutions.append(word)
+    if not solutions:
+        return letters
+    else:
+        return solutions
 
 if __name__ == '__main__':
     # TODO remove the debug flag before deployment!!!
