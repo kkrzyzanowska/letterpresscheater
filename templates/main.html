@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% block body %}
-  <h2>LetterPress Cheater!</h2>
-  <form action="{{ url_for('login') }}" method=post>
+<form action="{{ url_for('show_results') }}" method=post
+  class="add-entry">
     <dl>
-      <dt>Your letters:
-      <dd><input type=text name=letters>
+      <dt>Type your letters in, dawg:
+      <dd><input type=text name=letters >
       <dd><input type=submit value=Cheat!>
     </dl>
   </form>

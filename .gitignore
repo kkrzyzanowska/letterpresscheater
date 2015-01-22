@@ -1,4 +1,5 @@
 *.swp
+.ropeproject
 *~
 *.py[oc]
 .DS_Store
