@@ -1,8 +1,12 @@
 {% extends "layout.html" %}
 {% block body %}
   <ul class=solutions>
-  {% for solution in solutions %}
-  <li>{{ solution }}</li>
-  {% endfor %}
+    {% if solutions %}
+      {% for solution in solutions %}
+      <li>{{ solution }}</li>
+      {% endfor %}
+    {% else %}
+    <h3>No words can be created from your letters, dude!</h3>
+    {% endif %}
   </ul>
 {% endblock %}

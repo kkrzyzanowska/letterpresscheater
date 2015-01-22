@@ -1,4 +1,4 @@
 letterpresscheater
 ==================
 
-I use this app to win at the iOS game LetterPress. (not really). 
+An exercise in Python and Flask. Deployed to Heroku at letterpresscheater.herokuapp.com

@@ -22,8 +22,6 @@ def canMakeWord(letters, word):
     Checks if a word (from a dictionary) can be
     constructed with given letters
     """
-    if len(word) > len(letters):
-        return False
     listOfLetters = list(letters)
     for index, letter in enumerate(word):
         if letter in listOfLetters:
@@ -43,12 +41,11 @@ def compute_solution(letters):
     with open('static/dict.txt', 'r') as f:
         legalWordsList = f.readlines()
     for word in legalWordsList:
-        if canMakeWord(letters, word):
-            solutions.append(word)
-    if not solutions:
-        return letters
-    else:
-        return solutions
+        if len(word) <= len(letters):
+            if canMakeWord(letters, word):
+                solutions.append(word)
+    sortedSolutions = sorted(solutions, key=len, reverse=True)
+    return sortedSolutions
 
 if __name__ == '__main__':
     # TODO remove the debug flag before deployment!!!
