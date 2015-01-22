@@ -42,7 +42,7 @@ def compute_solution(letters):
         legalWordsList = f.readlines()
     for word in legalWordsList:
         if len(word) <= len(letters):
-            if canMakeWord(letters, word):
+            if canMakeWord(letters, word.rstrip()):
                 solutions.append(word)
     sortedSolutions = sorted(solutions, key=len, reverse=True)
     return sortedSolutions
