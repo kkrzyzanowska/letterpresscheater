@@ -2,6 +2,8 @@
 {% block body %}
   <ul class=solutions>
     {% if solutions %}
+      <h3>There are {{ solutions | length }} words you can use for
+        cheating: </h3>
       {% for solution in solutions %}
       <li>{{ solution }}</li>
       {% endfor %}
